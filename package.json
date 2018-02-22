@@ -1,0 +1,36 @@
+{
+  "name": "read-markdown",
+  "version": "0.0.0",
+  "keywords": [
+    "javascript",
+    "node",
+    "module",
+    "boilerplate"
+  ],
+  "main": "dist/index.js",
+  "browser": "dist-browser/index.js",
+  "author": "Kennedy Rose <krose@escaladesports.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/escaladesports/javascript-module-boilerplate.git"
+  },
+  "license": "MIT",
+  "scripts": {
+    "analyze": "esca-scripts analyze --input './src/inject.js' --browser",
+    "build": "run-p build:main build:browser",
+    "build:main": "esca-scripts build --input 'src --output dist --babel --multiple",
+    "build:browser": "esca-scripts build --input './src/index.js' --output './dist-browser/index.js' --component --browser --minify --name moduleBoilerplate",
+    "dev": "esca-scripts dev ---input './dev/dev.js, ./dev/index.html' --browser",
+    "prepublishOnly": "npm run build",
+    "reset": "esca-scripts reset",
+    "test": "esca-scripts test",
+    "travis": "opn https://travis-ci.org/escaladesports/javascript-module-boilerplate/branches"
+  },
+  "devDependencies": {
+    "esca-scripts": "^0.14.1",
+    "npm-run-all": "^4.1.2"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0"
+  }
+}
