@@ -1,25 +1,36 @@
-# JavaScript Module Boilerplate
+# read-markdown
 
-A simple JavaScript boilerplate that outputs to ES5 and ES6.
+A promise-based module for reading and parsing markdown files.
 
-## Getting started
+## Installation
+
+With npm:
 
 ```bash
-git clone git@github.com:escaladesports/javascript-module-boilerplate.git --depth=1 your-module
-cd your-module
-yarn
-yarn reset
+npm install --save read-markdown
 ```
 
-Also make sure to edit the `package.json` file with a new name, version number, author, and anything else you might need.
+Or with Yarn:
+
+```bash
+yarn add read-markdown
+```
 
 ## Usage
 
-- `yarn build`: Build browser and node versions of the module
-- `yarn dev`: Run live dev mode
-- `yarn test`: Run mocha tests
-- `yarn analyze`: View bundle sizes
+Just supply a glob or array of glob patterns to your markdown files.
 
-# Unit Testing
+```javascript
+var readMarkdown = require('read-markdown)
 
-Unit tests will be performed pre-commit and pre-publish. You can change this in the npm scripts if this doesn't work well with your use case.
+readMarkdown('./path/to/files/**/*.md')
+	.then(function(data){
+		console.log(data)
+	})
+	.catch(console.error)
+```
+
+## Options
+
+- `results`: Return results as an object or array. Default `object`
+- `html`: Parse the contents as HTML. Default: `true`
