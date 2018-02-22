@@ -1,9 +1,10 @@
 import { expect } from 'chai'
-import theModule from '../src'
+import readMarkdown from '../src'
 
-describe('Default module', () => {
-	it('Should have content', () => {
-		const testVar = theModule()
-		expect(testVar).to.not.be.empty
+describe('readMarkdown', () => {
+	it('Should parse markdown files', async () => {
+		const contents = await readMarkdown(`./markdown/**/*.md`)
+		expect(contents).to.not.be.empty
+		expect(contents[`./markdown/fish-stick.md`].data.title).to.equal(`Fish Stick`)
 	})
 })
