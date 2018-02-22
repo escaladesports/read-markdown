@@ -21,7 +21,7 @@ yarn add read-markdown
 Just supply a glob or array of glob patterns to your markdown files.
 
 ```javascript
-var readMarkdown = require('read-markdown)
+var readMarkdown = require('read-markdown')
 
 readMarkdown('./path/to/files/**/*.md')
 	.then(function(data){
