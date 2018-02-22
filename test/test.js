@@ -1,5 +1,5 @@
 import { expect } from 'chai'
-import readMarkdown from '../src'
+import readMarkdown from '../dist'
 
 describe('readMarkdown', () => {
 	it('Should parse markdown files', async () => {

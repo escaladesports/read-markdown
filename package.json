@@ -16,10 +16,10 @@
   "license": "MIT",
   "scripts": {
     "analyze": "esca-scripts analyze --input './src/inject.js' --browser",
-    "build": "esca-scripts build --input 'src --output dist --babel --multiple",
+    "build": "esca-scripts build --input src --output dist --babel --multiple",
     "prepublishOnly": "npm run build",
     "reset": "esca-scripts reset",
-    "test": "esca-scripts test",
+    "test": "npm run build && esca-scripts test",
     "travis": "opn https://travis-ci.org/escaladesports/read-markdown/branches"
   },
   "devDependencies": {
